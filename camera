@@ -1,0 +1,20 @@
+#pragma strict
+
+function Update () {
+
+	if( transform.position.y>600 ){
+		
+	  transform.position.y=transform.position.y-0.18;
+	  transform.position.z=transform.position.z+0.18;  
+	  
+	}
+	
+	
+	else if( transform.position.y>60 ){
+		
+	  transform.position.y=transform.position.y-0.5;
+	  transform.position.z=transform.position.z+0.5;  
+	  
+	}
+
+}
