@@ -1,0 +1,87 @@
+#pragma strict
+// JavaScript
+	
+ var isPaused : boolean = false;
+ var aud : AudioSource;
+ 
+ @script RequireComponent(AudioSource)
+ 
+function Update()
+{
+ 
+     if(Input.GetKeyDown("escape") && !isPaused)
+   {
+      print("Paused");
+      Time.timeScale = 0.0;
+     aud.Pause();
+      isPaused = true;
+   }
+   else if(Input.GetKeyDown("escape") && isPaused)
+   {
+      print("Unpaused");
+      Time.timeScale = 1.0;
+      aud.Play();
+      isPaused = false;    
+   } 
+}
+
+function OnGUI () {
+	// Make a background box
+	GUI.Box (Rect (10,10,190,40), "3D Learning Network Menu");
+		
+		
+		
+	// Make the first button. If it is pressed, Application.Loadlevel (0) will be executed
+	if (GUI.Button (Rect (20,40,80,20), "WELCOME!")) {
+		Application.LoadLevel (6);
+	}
+	if (GUI.Button (Rect (20,70,80,20), "LAN")) {
+		Application.LoadLevel (7);
+	}
+	if (GUI.Button (Rect (20,100,80,20), "WAN")) {
+		Application.LoadLevel (13);
+	}
+	if (GUI.Button (Rect (20,130,130,20), "WAN EXAMPLES")) {
+		Application.LoadLevel (11);
+	}
+	if (GUI.Button (Rect (20,160,60,20), "NIC")) {
+		Application.LoadLevel (8);
+	}
+	if (GUI.Button (Rect (20,190,150,20), "SWITCH & ROUTER")) {
+		Application.LoadLevel (9);
+	}
+	if (GUI.Button (Rect (20,220,80,20), "MODEM")) {
+		Application.LoadLevel (10);
+	}
+	if (GUI.Button (Rect (20,250,190,20), "DETAILED LAN")) {
+		Application.LoadLevel (0);
+	}
+	if (GUI.Button (Rect (20,280,190,20), "ROUTE TO SWITCH")) {
+		Application.LoadLevel (4);
+		
+	}
+	if (GUI.Button (Rect (20,310,190,20), "ROUTE TO MODEM")) {
+		Application.LoadLevel (5);
+	}
+	if (GUI.Button (Rect (20,340,190,20), "ROUTE TO INTERNET")) {
+		Application.LoadLevel (21);
+	}	
+	//ERWTISEIS!
+	if (GUI.Button (Rect (20,370,150,20), "QUESTIONS")) {
+		Application.LoadLevel (20);
+	}
+	 if (GUI.Button (Rect (20,400,140,20), "EXIT"))
+      {
+         print("Quit!");
+         Application.Quit();
+      }
+	
+	 if (GUI.Button (Rect (20,430,140,20), "RESTART"))
+      {
+         print("Restart");
+         Application.LoadLevel(6);
+         Time.timeScale = 1.0;
+         isPaused = false;
+      }  
+
+}
