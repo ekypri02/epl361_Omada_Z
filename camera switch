@@ -1,0 +1,24 @@
+#pragma strict
+
+var cam1: Camera;//packetscamera
+var cam2: Camera;//internetcamera
+var cam3: Camera;//zoominwebcamera
+
+function Update () {
+
+	if(cam2.transform.position.y>59 && cam2.transform.position.y<60){
+		cam1.enabled=false;
+		cam2.enabled=false;
+		cam3.enabled=true;
+	}
+	else if (cam1.transform.position.z>-563){
+		cam1.enabled=false;
+		cam3.enabled=false;
+		cam2.enabled=true;
+	}
+	else{
+		cam1.enabled=true;
+		cam2.enabled=false;
+		cam3.enabled=false;
+	}
+}
