@@ -1,0 +1,10 @@
+#pragma strict
+ function  Update() {
+    
+     
+		if (!animation.isPlaying)
+			Application.LoadLevel(4);      
+    
+
+	}
+	
