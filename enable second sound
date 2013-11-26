@@ -1,0 +1,11 @@
+#pragma strict
+
+    var foo : AudioSource;
+     
+    function Update () {
+     
+    if (!foo.isPlaying && Time.time >= 20) {
+    foo.Play();
+    }
+    }
+
